@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.gen.models.bankservice";
+
+message BalanceCheckRequest {
+	int32 accNo = 1;
+	int32 amount = 2;
+}
+
+message Balance {
+	int32 amount = 1;
+}
+
+message Money {
+	int32 value = 1;
+}
+
+message DepositeRequest {
+	int32 accNo = 1;
+	int32 amount = 2;
+}
+
+service BankService {
+	//Unary
+	rpc getBalance(BalanceCheckRequest) returns (Balance);
+
+	//Server stream
+	rpc withdrawAmout(BalanceCheckRequest) returns(stream Money);
+
+	//Client Streaming
+	rpc cashDeposite(stream DepositeRequest) returns (Balance);
+}
