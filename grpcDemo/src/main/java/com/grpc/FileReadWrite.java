@@ -10,15 +10,16 @@ import com.gen.models.Person;
 public class FileReadWrite {
 
 	public static void main(String[] args) throws IOException {
-//		Person person = Person.newBuilder()
-//				.setName("raj")
-//				.setAge(10)
-//				.build();
+		Person person = Person.newBuilder()
+				.setName("raj")
+				.setAge(10)
+				.build();
 		Path path = Paths.get("Person-1");
-//		Files.write(path, person.toByteArray());
+		System.out.println(path.toString());
+		Files.write(path, person.toByteArray());
 		
-		byte[] bytes= Files.readAllBytes(path);
-		System.out.println(Person.parseFrom(bytes).getGender());
+//		byte[] bytes= Files.readAllBytes(path);
+//		System.out.println(Person.parseFrom(bytes).getGender());
 
 	}
 

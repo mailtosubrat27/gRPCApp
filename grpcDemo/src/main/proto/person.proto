@@ -5,20 +5,20 @@ option java_package = "com.gen.models";
 
 
 //V1
-/*message Person {
+message Person {
 	string name = 1;
 	int32 age = 2;
-}*/
+}
 
 //V2
-message Person {
+/*message Person {
 	string firstName = 1;
 	string lastName = 2;
 	string state = 3;
 	int32 mobile = 4;
 	Gender gender = 5;
 	//Mobile mobile = 6;
-}
+}*/
 enum Gender {
 	male = 0;
 	female = 1;
